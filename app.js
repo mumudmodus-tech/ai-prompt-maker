@@ -79,9 +79,17 @@ $('local-ai-btn').addEventListener('click', async () => {
     btn.textContent = 'Buat lagi dengan AI lokal';
     toast('Prompt dibuat oleh AI lokal. Periksa hasilnya sebelum digunakan.');
   } catch (err) {
-    console.error(err);
-    status.textContent = 'AI lokal gagal dimuat di browser ini. Kamu tetap bisa memakai tombol “Buat prompt” sebagai alternatif.';
-    toast('AI lokal belum berhasil dijalankan. Coba Chrome terbaru dan koneksi stabil.');
+    console.error('Local AI error:', err);
+
+const detail = err instanceof Error
+  ? err.message
+  : String(err);
+
+status.textContent =
+  `AI lokal gagal: ${detail.slice(0, 180)}. ` +
+  'Tombol “Buat prompt” tetap tersedia.';
+
+toast(`AI lokal gagal: ${detail.slice(0, 90)}`);
   } finally {
     modelLoading = false; btn.disabled = false;
     if (btn.textContent === 'AI sedang bekerja…') btn.textContent = 'Coba lagi dengan AI lokal';
