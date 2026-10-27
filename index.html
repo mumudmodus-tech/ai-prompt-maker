@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102b72">
+<meta name="description" content="AI Prompt Maker oleh MMD Publishing. Buat prompt yang jelas dan siap digunakan.">
+<title>AI Prompt Maker — MMD Publishing</title><link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="logo">M✦</span><span><b>Prompt Maker</b><small>by MMD Publishing</small></span></a><span class="pill">● Gratis · Tanpa API</span></header>
+<main class="wrap">
+<section class="intro"><div class="eyebrow">✦ YOUR IDEAS, BETTER PROMPT</div><h1>Ubah ide jadi<br><span>prompt yang hebat.</span></h1><p>Buat instruksi yang jelas, terarah, dan siap digunakan di ChatGPT, Gemini, Claude, atau alat AI favoritmu.</p><div class="perks"><span>✓ Tanpa API key</span><span>✓ Bahasa Indonesia</span><span>✓ Siap disalin</span></div></section>
+<section class="panel"><div class="panelhead"><div><small>PROMPT STUDIO · 01</small><h2>Rancang prompt kamu</h2></div><span class="star">✧</span></div>
+<form id="prompt-form">
+<label for="goal">Apa yang ingin kamu buat? <em>*</em></label><textarea id="goal" rows="3" placeholder="Contoh: Buat strategi jualan ebook digital untuk pemula dengan modal nol..." required></textarea>
+<div class="grid">
+<div><label for="category">Kategori</label><select id="category"><option>Umum</option><option>Bisnis & usaha</option><option>Jualan online</option><option>Media sosial</option><option>Gambar AI</option><option>Coding & aplikasi</option><option>Belajar</option><option>Menulis</option></select></div>
+<div><label for="tool">Untuk AI</label><select id="tool"><option>Universal (semua AI)</option><option>ChatGPT</option><option>Google Gemini</option><option>Claude</option><option>AI gambar</option><option>AI coding</option></select></div>
+<div><label for="language">Bahasa prompt</label><select id="language"><option>Indonesia</option><option>Inggris</option></select></div>
+<div><label for="style">Gaya jawaban</label><select id="style"><option>Profesional</option><option>Ramah dan mudah dipahami</option><option>Kreatif</option><option>Persuasif</option><option>Akademis</option><option>Ringkas dan langsung</option></select></div>
+</div>
+<label>Tingkat detail</label><div class="segmented"><label><input type="radio" name="detail" value="Ringkas"><span>Ringkas</span></label><label><input type="radio" name="detail" value="Seimbang" checked><span>Seimbang</span></label><label><input type="radio" name="detail" value="Mendalam"><span>Mendalam</span></label></div>
+<label for="context" class="context-label">Konteks tambahan <small>OPSIONAL</small></label><input id="context" type="text" placeholder="Target audiens, batasan, tujuan, atau format hasil...">
+<button class="primary" type="submit">✦ Buat prompt <span>↗</span></button>
+</form>
+<div id="result-section" hidden class="result"><div class="resulthead"><div><small>PROMPT SIAP PAKAI · 02</small><h3>Prompt kamu</h3></div><button id="copy-btn" class="copy">▣ Salin</button></div><textarea id="result" rows="10" aria-label="Hasil prompt"></textarea><div class="resultfoot"><span id="word-count">0 kata</span><span id="copy-status">Siap digunakan.</span></div><div class="actions"><button id="favorite-btn" class="secondary">☆ Simpan favorit</button><button id="reset-btn" class="plain">Buat ulang</button></div></div>
+</section>
+<section class="panel favorites"><div class="favhead"><div><small>KOLEKSI PRIBADI</small><h2>Favorit kamu</h2></div><span id="favorite-count" class="count">0</span></div><p id="favorites-empty">Prompt yang kamu simpan akan muncul di sini. Tersimpan hanya di perangkat ini.</p><div id="favorites-list" class="favlist"></div></section>
+<footer><b>M✦</b><span>Dirancang untuk ide yang lebih besar.</span><span>© <span id="year"></span> MMD Publishing</span></footer>
+</main><div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body></html>
